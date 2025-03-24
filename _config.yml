@@ -56,10 +56,5 @@ exclude:
   - vendor/gems/
   - vendor/ruby/
 
-# Add these lines to your existing config
-
-# Remove or comment out these lines if they exist
-# highlighter: rouge
-# kramdown:
-#   syntax_highlighter: rouge
-
+url: "https://pythongong.github.io/"
+baseurl: ""
