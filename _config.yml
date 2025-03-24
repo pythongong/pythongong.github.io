@@ -56,5 +56,4 @@ exclude:
   - vendor/gems/
   - vendor/ruby/
 
-url: "https://pythongong.github.io"
-baseurl: ""
+

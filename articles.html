@@ -10,7 +10,7 @@ title: Articles
         {% assign tags = site.posts | map: "tags" | flatten | uniq | sort %}
         {% for tag in tags %}
         {% assign post_count = site.posts | where_exp: "post", "post.tags contains tag" | size %}
-        <a href="{{ site.baseurl }}/tag/{{ tag | slugify }}" class="tag-card">
+        <a href="{{ '/tag/' | append: tag | downcase | relative_url }}" class="tag-card">
             <div class="tag-content">
                 <h2>{{ tag }}</h2>
                 <p class="post-count">{{ post_count }} POSTS</p>
@@ -19,6 +19,3 @@ title: Articles
         {% endfor %}
     </div>
 </div>
-<style>
-
-</style>
