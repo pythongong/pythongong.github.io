@@ -2,7 +2,6 @@
 layout: post
 title:  "C Array Puzzles"
 date:   2025-03-24
-categories: C
 tag: C
 ---
 
