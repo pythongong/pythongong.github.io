@@ -1,0 +1,83 @@
+---
+layout: default
+title: Welcome to Python Gong's Blog
+---
+
+<div class="home">
+    <header class="page-header">
+        <h1>Welcome to Python Gong</h1>
+        <p class="lead">A personal journey through code, algorithms, and software development</p>
+    </header>
+
+    <section class="intro">
+        <h2>About This Blog</h2>
+        <p>
+            Hello and welcome to my programming blog! Here I share my experiences, 
+            insights, and tutorials on various programming topics. Whether you're 
+            a beginner or an experienced developer, I hope you'll find something 
+            useful in these pages.
+        </p>
+    </section>
+
+    <section class="posts">
+        <h2>Latest Posts</h2>
+        <ul class="post-list">
+            {% for post in site.posts %}
+            <li class="post-item">
+                <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
+                <h3>
+                    <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                </h3>
+                {% if post.description %}
+                <p class="post-description">{{ post.description }}</p>
+                {% endif %}
+            </li>
+            {% endfor %}
+        </ul>
+    </section>
+</div>
+
+<style>
+    .home {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    .page-header {
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+    .lead {
+        font-size: 1.25rem;
+        color: #666;
+    }
+    .post-list {
+        list-style: none;
+        padding: 0;
+    }
+    .post-item {
+        margin-bottom: 2rem;
+        padding: 1rem;
+        border-radius: 8px;
+        background-color: #f8f9fa;
+        transition: transform 0.2s;
+    }
+    .post-item:hover {
+        transform: translateX(5px);
+    }
+    .post-date {
+        color: #666;
+        font-size: 0.9rem;
+    }
+    .post-link {
+        color: #2c3e50;
+        text-decoration: none;
+    }
+    .post-link:hover {
+        text-decoration: underline;
+    }
+    .post-description {
+        color: #666;
+        margin-top: 0.5rem;
+    }
+</style>
