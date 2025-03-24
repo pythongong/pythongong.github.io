@@ -4,7 +4,7 @@ layout: default
 
 <div class="tag-page">
     <header class="tag-header">
-        <h1>#{{ page.tag }}</h1>
+        <h1>{{ page.tag }}</h1>
         <p class="post-count">{{ site.posts | where_exp: "post", "post.tags contains page.tag" | size }} Posts</p>
     </header>
 
@@ -33,47 +33,58 @@ layout: default
         margin: 0 auto;
         padding: 20px;
     }
+
     .tag-header {
         text-align: center;
         margin-bottom: 3rem;
     }
+
     .tag-header h1 {
         color: #2c3e50;
         margin-bottom: 0.5rem;
     }
+
     .post-count {
         color: #666;
         font-size: 1.1rem;
         margin: 0;
     }
+
     .post-list {
         display: grid;
         gap: 2rem;
     }
+
     .post-card {
         padding: 1.5rem;
         background: #f8f9fa;
         border-radius: 8px;
         transition: transform 0.2s;
     }
+
     .post-card:hover {
         transform: translateX(5px);
     }
+
     .post-card h2 {
         margin: 0 0 0.5rem 0;
     }
+
     .post-card h2 a {
         color: #2c3e50;
         text-decoration: none;
     }
+
     .post-card h2 a:hover {
         text-decoration: underline;
     }
+
     .post-meta {
         color: #666;
         font-size: 0.9rem;
         margin-bottom: 1rem;
     }
+
     .post-description {
         color: #444;
         margin: 0;
