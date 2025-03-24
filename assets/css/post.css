@@ -1,0 +1,36 @@
+.post-list {
+    text-align: left;
+    list-style: none;
+    padding: 0;
+}
+
+.post-item {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    transition: transform 0.2s;
+}
+
+.post-item:hover {
+    transform: translateX(5px);
+}
+
+.post-date {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.post-link {
+    color: #2c3e50;
+    text-decoration: none;
+}
+
+.post-link:hover {
+    text-decoration: underline;
+}
+
+.post-description {
+    color: #666;
+    margin-top: 0.5rem;
+}

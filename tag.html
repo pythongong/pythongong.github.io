@@ -1,0 +1,75 @@
+---
+layout: default
+permalink: /articles/tag
+---
+
+<header class="tag-header">
+  <h1 id="tag-name"></h1>
+  <hr style="width: 30%; height: 2px; background-color: rgb(233, 163, 22); border: none;">
+  <p class="post-count"> <strong id="tag-count"></strong>
+    Posts</p>
+
+  <ul class="post-list" id="post-list"></ul>
+
+  <div id="posts-container" data-posts='[
+  {% for post in site.posts %}
+    {
+      "tag": "{{ post.tag }}",
+      "date": "{{ post.date | date: "%Y-%m-%d" }}", "url" : "{{ post.url | relative_url }}" , "title"
+    : "{{ post.title | escape }}" }{% unless forloop.last %},{% endunless %} {% endfor %} ]'></div>
+
+
+  <script>
+
+    // Get the tag parameter from the URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const tag = urlParams.get("tag");
+
+    // Display the tag name
+    document.getElementById("tag-name").textContent = tag || "All";
+
+    // Get the data from the hidden HTML element
+    const postsContainer = document.getElementById("posts-container");
+    const postsData = postsContainer ? postsContainer.getAttribute("data-posts") : null;
+
+    // Parse the JSON string into an array
+    const sitePosts = postsData ? JSON.parse(postsData) : [];
+
+    // Change this to filter by tag
+    const filteredPosts = sitePosts.filter(post => post.tag === tag);
+
+    let count = filteredPosts.length;
+
+    document.getElementById("tag-count").textContent = count;
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const postListContainer = document.getElementById("post-list");
+
+      postListContainer.innerHTML = filteredPosts.map(post => `
+  <div class="post-item">
+    
+    <h2><a class="post-link"  href="${post.url}">${post.title}</a></h2>
+    <div class="post-date">
+      <time datetime="${post.date}">
+        ${new Date(post.date).toLocaleDateString('en-US', { month: 'long', day: '2-digit', year: 'numeric' })}
+      </time>
+    </div>
+    
+  </div>
+`)
+    });
+
+
+  </script>
+
+  <style>
+    .tag-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .tag-header h1 {
+      color: #2c3e50;
+      margin-bottom: 0.5rem;
+    }
+  </style>
