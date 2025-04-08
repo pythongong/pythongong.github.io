@@ -25,9 +25,9 @@ layout: default
     </section>
 
     <section class="posts">
-        <h2>Latest Posts</h2>
+        <h2>Latest 5 Posts</h2>
         <ul class="post-list">
-            {% for post in site.posts %}
+            {% for post in site.posts | limit: 5 %}
             <li class="post-item">
                 <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
                 <h3>
@@ -39,6 +39,10 @@ layout: default
             </li>
             {% endfor %}
         </ul>
+    </section>
+
+    <section class="end">
+        <p> You can find more articles under the Articles tab.</p>
     </section>
 </div>
 
