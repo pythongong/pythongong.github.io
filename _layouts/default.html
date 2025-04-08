@@ -6,13 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Cheng Gong's Programming Blog - Sharing coding experiences and insights">
     <title>{% if page.title %}{{ page.title }} - {% endif %}Cheng Gong</title>
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
     <!-- KaTeX CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css">
     <!-- KaTeX JS -->
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js"></script>
-    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
-
-
+    <!-- Auto-render extension -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {
+        delimiters: [
+          {left: '$$', right: '$$', display: true},
+          {left: '\\[', right: '\\]', display: true},
+          {left: '$', right: '$', display: false},
+          {left: '\\(', right: '\\)', display: false}
+        ]
+      });"></script>
 </head>
 
 <body>
