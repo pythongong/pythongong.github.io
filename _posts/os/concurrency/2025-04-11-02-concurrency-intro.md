@@ -27,7 +27,7 @@ Modern operating systems support several threads within a process, to allow a si
 
 All thread shares the same heap but there will be one stack per thread. Stack segment can be divided into several sub stack frames within the address space. Thus, any stack-allocated variables, parameters, return values, and other things that we put on the stack will be placed in what is sometimes called **thread-local storage**, i.e., the stack of the relevant thread.
 
-![image.png]({{"/assets/images/os/process/concurrency/concurrency-intro.png" | relative_url}})
+![image.png]({{"/assets/images/os/concurrency/concurrency-intro.png" | relative_url}})
 
 In this figure, you can see two stacks spread throughout the address space of the process. 
 
